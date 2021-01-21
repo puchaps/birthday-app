@@ -1,0 +1,18 @@
+.custom-button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #ebc2af;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px black;
+  cursor: pointer;
+  transition: all 0.4s;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #ebb79f;
+  }
+}
