@@ -6,6 +6,7 @@ import { UsersContext } from '../../context/users/users.context';
 
 const BirthdayToday = () => {
   const {usersDB} = useContext(UsersContext);
+  
   return(
     <div className="birthday-today">
       <span className="birthday-today-decr">
