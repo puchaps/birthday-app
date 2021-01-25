@@ -6,3 +6,22 @@
   border-radius: 5px;
   box-shadow: 0 1px 5px black;
 }
+
+@media screen and (max-width: 1440px) {
+  .birthday-preview {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .birthday-preview {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .birthday-preview {
+    width: 80%;
+  }
+}
+

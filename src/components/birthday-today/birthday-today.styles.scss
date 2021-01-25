@@ -2,8 +2,16 @@
   text-align: center;
 
   .birthday-today-decr {
-    font-size: 18px;
+    font-size: 20px;
     opacity: 0.8;
     font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .birthday-today{
+    .birthday-today-decr {
+      font-size: 18px;
+    }
   }
 }

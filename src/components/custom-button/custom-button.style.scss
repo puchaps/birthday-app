@@ -16,3 +16,9 @@
     background-color: #ebb79f;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .custom-button{
+    font-size: 13px;
+  }
+}
