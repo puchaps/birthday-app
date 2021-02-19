@@ -9,12 +9,18 @@ import BirthdayOverview from "../birthday-overview/birthday-overview.component";
 import CustomButton from "../custom-button/custom-button.component";
 
 const BirthdayPreview = () => {
-  const { setUsersDB } = useContext(UsersContext);
+  const { usersDB, setUsersDB, handleUseEffect } = useContext(UsersContext);
   return (
     <div className="birthday-preview">
       <BirthdayToday />
       <BirthdayOverview />
-      <CustomButton onClick={() => setUsersDB([])}>CLEAR ALL</CustomButton>
+      {usersDB.length < 1 ? (
+        <CustomButton onClick={() => handleUseEffect()}>
+          GET FRIENDS
+        </CustomButton>
+      ) : (
+        <CustomButton onClick={() => setUsersDB([])}>CLEAR ALL</CustomButton>
+      )}
     </div>
   );
 };

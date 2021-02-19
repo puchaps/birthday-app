@@ -1,8 +1,16 @@
-.loader {
-  width: 10%;
-  margin: 30vh auto;
+.loader-img {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30vh;
+  animation: animationLoader 0.8s ease-in-out infinite;
+}
 
-  img {
-    width: 100%;
+@keyframes animationLoader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

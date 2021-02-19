@@ -30,6 +30,7 @@ const UsersProvider = ({ children }) => {
         value={{
           usersDB,
           setUsersDB,
+          handleUseEffect,
         }}
       >
         {children}

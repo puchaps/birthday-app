@@ -5,9 +5,11 @@ import "./loader.styles.scss";
 const Loader = ({ onLoader, children }) => {
   if (onLoader) {
     return (
-      <div className="loader">
-        <img src="https://i.gifer.com/ZlXo.gif" alt="loader" />
-      </div>
+      <img
+        className="loader-img"
+        src="https://www.flaticon.com/svg/vstatic/svg/59/59414.svg?token=exp=1613740574~hmac=4775a161487fa33eacd097e207d09cba"
+        alt="loader"
+      />
     );
   }
   return children;

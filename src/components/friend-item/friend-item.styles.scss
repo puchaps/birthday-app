@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   margin-top: 20px;
+  animation: animationFriendItem 0.5s ease-in-out;
 
   .friend-item-image {
     width: 15%;
@@ -39,6 +40,17 @@
         opacity: 0.5;
       }
     }
+  }
+}
+
+@keyframes animationFriendItem {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
