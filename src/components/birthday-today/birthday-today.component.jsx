@@ -1,16 +1,16 @@
-import { useContext } from 'react';
+import React, { useContext } from "react";
 
-import './birthday-today.styles.scss';
+import "./birthday-today.styles.scss";
 
-import { UsersContext } from '../../context/users/users.context';
+import { UsersContext } from "../../context/users/users.context";
 
 const BirthdayToday = () => {
-  const {usersDB} = useContext(UsersContext);
-  
-  return(
+  const { usersDB } = useContext(UsersContext);
+
+  return (
     <div className="birthday-today">
       <span className="birthday-today-decr">
-        {usersDB.length} Birthdays today 
+        {usersDB.length} Birthdays today
       </span>
     </div>
   );

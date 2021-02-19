@@ -1,29 +1,21 @@
-import { useContext } from 'react';
+import React, { useContext } from "react";
 
-import './birthday-preview.styles.scss';
+import "./birthday-preview.styles.scss";
 
-import { UsersContext } from '../../context/users/users.context';
+import { UsersContext } from "../../context/users/users.context";
 
-import BirthdayToday from '../birthday-today/birthday-today.component';
-import BirthdatOverview from '../birthdat-overview/birthdat-overview.component';
-import CustomButton from '../custom-button/custom-button.component';
-import Loaded from '../loader/loader.component';
+import BirthdayToday from "../birthday-today/birthday-today.component";
+import BirthdayOverview from "../birthday-overview/birthday-overview.component";
+import CustomButton from "../custom-button/custom-button.component";
 
 const BirthdayPreview = () => {
-  const {setUsersDB, loaded} = useContext(UsersContext);
-
-  if (loaded) {
-    return <Loaded/>
-  };
-  
-  return(
+  const { setUsersDB } = useContext(UsersContext);
+  return (
     <div className="birthday-preview">
-      <BirthdayToday/>
-      <BirthdatOverview/>
-      <CustomButton onClick = {() => setUsersDB([])}>
-        CLEAR ALL
-      </CustomButton>
-    </div> 
+      <BirthdayToday />
+      <BirthdayOverview />
+      <CustomButton onClick={() => setUsersDB([])}>CLEAR ALL</CustomButton>
+    </div>
   );
 };
 

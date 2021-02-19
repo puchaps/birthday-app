@@ -1,34 +1,40 @@
-
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useCallback, useEffect, useState } from "react";
+import axios from "axios";
+import Loader from "../../components/loader/loader.component";
 
 export const UsersContext = React.createContext();
 
-const UsersProvider = ({children}) => {
-  const[usersDB, setUsersDB] = useState([]);
-  const[loaded, setLoading] = useState(true);
+const UsersProvider = ({ children }) => {
+  const [usersDB, setUsersDB] = useState([]);
+  const [loaded, setLoading] = useState(true);
 
-  const converdUsersDB = (users) => {
-    return users.filter((item, index) => index < 5)
-  }
+  const transformUsersDB = (users) => users.filter((_, index) => index < 5);
 
-  useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
-      .then( res => converdUsersDB(res.data))
-      .then( con => {
+  const handleUseEffect = useCallback(() => {
+    axios
+      .get(`https://jsonplaceholder.typicode.com/users`)
+      .then((res) => transformUsersDB(res.data))
+      .then((con) => {
         setUsersDB(con);
         setLoading(false);
       });
   }, []);
-  
-  return(
-    <UsersContext.Provider value = {{
-      usersDB,
-      setUsersDB,
-      loaded
-    }}>
-      {children}
-    </UsersContext.Provider>
+
+  useEffect(() => {
+    handleUseEffect();
+  }, [handleUseEffect]);
+
+  return (
+    <Loader onLoader={loaded}>
+      <UsersContext.Provider
+        value={{
+          usersDB,
+          setUsersDB,
+        }}
+      >
+        {children}
+      </UsersContext.Provider>
+    </Loader>
   );
 };
 

@@ -1,11 +1,12 @@
-import './custom-button.style.scss';
+/* eslint-disable react/jsx-props-no-spreading */
+import React from "react";
 
-const CustomButton = ({children, ...otherProps}) => {
-  return(
-    <button className="custom-button" {...otherProps}>
-      {children}
-    </button>
-  );
-};
+import "./custom-button.style.scss";
+
+const CustomButton = ({ children, ...otherProps }) => (
+  <button className="custom-button" {...otherProps} type="button">
+    {children}
+  </button>
+);
 
 export default CustomButton;
